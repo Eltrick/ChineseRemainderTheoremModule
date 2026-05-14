@@ -11,11 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: 
-  title: 
-  author: 
-  description: 
-  version: 
+  id: ChineseRemainderTheoremModule
+  title: Chinese Remainder Theorem
+  author: Eltrick
+  description: 'From a set of modular equations, find a value that satisfies them
+    all.
+
+
+    Module ID: ChineseRemainderTheoremModule'
+  version: 2.01
   outputFolder: build
   debugBuild: 1
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: b680addb3e395b342b63f0a4defd16d6, type: 3}

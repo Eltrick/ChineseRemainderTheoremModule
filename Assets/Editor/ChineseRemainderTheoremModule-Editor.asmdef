@@ -1,0 +1,10 @@
+{
+  "name": "ChineseRemainderTheoremModule-Editor",
+  "references": [
+    "ChineseRemainderTheoremModule"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}

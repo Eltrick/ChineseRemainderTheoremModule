@@ -23,7 +23,7 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
     private int _internalIndex;
     private ulong _submitted;
 
-    private bool _isSeedSet;
+    private bool _isSeedSet, _hasModInitialised;
     private int _seed;
     private System.Random _rnd;
 
@@ -92,6 +92,7 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
 
         ClearInput();
         SetDisplays(_internalIndex);
+        _hasModInitialised = true;
     }
 
     private void SetDisplays(int index)
@@ -104,7 +105,7 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
     {
         ButtonEffect(_buttons[d], .1f, KMSoundOverride.SoundEffect.ButtonPress);
 
-        if (_isModuleSolved || _submitted.ToString().Length >= 16)
+        if (_isModuleSolved || _submitted.ToString().Length >= 16 || !_hasModInitialised)
             return;
 
         _submitted *= 10;
@@ -117,7 +118,7 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
     {
         ButtonEffect(_clearButton, .1f, KMSoundOverride.SoundEffect.ButtonPress);
 
-        if (_isModuleSolved)
+        if (_isModuleSolved || !_hasModInitialised)
             return;
 
         _submitted = 0;
@@ -128,7 +129,7 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
     {
         ButtonEffect(_submitButton, .1f, KMSoundOverride.SoundEffect.ButtonPress);
 
-        if (_isModuleSolved)
+        if (_isModuleSolved || !_hasModInitialised)
             return;
 
         if (_inputText.text == "")
