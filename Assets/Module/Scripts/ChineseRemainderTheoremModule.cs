@@ -57,6 +57,7 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
 #pragma warning disable IDE0051
     private new void Awake()
     {
+        base.Awake();
         _module = GetComponent<KMBombModule>();
         _module.OnActivate += Activate;
         _puzzle = GetComponent<CRTPuzzle>();
@@ -90,9 +91,10 @@ public partial class ChineseRemainderTheoremModule : ModuleScript
         _puzzle.GeneratePuzzle();
         _puzzle.Log();
 
+        _hasModInitialised = true;
+
         ClearInput();
         SetDisplays(_internalIndex);
-        _hasModInitialised = true;
     }
 
     private void SetDisplays(int index)
