@@ -20,6 +20,7 @@ partial class ChineseRemainderTheoremModule
             {
                 yield return new WaitForSeconds(1.5f);
                 _submitButton.OnInteract();
+                yield return "trycancel";
             }
 
             yield break;
